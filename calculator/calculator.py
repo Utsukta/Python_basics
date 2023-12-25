@@ -15,6 +15,10 @@ def equalbtn_clicked():
             expression=""
         except ZeroDivisionError as e:
              equation.set("Math error")
+             expression=""
+        except SyntaxError as e:
+             equation.set("Math syntax error")
+             expression=""
              
         
 def restbtn_clicked():
@@ -25,13 +29,17 @@ def restbtn_clicked():
      equation.set(expression) 
 
 def removebtn_clicked():
+    #global keyword indicates that the function will modify the global variable
+    #rather than creating the new local variable with the same name.
      global expression
-     a= len(expression)
      if((len(expression))>=1):
+      #  This line removes the last character from the expression string using slicing. 
+      #  The [:-1] notation means all characters from the beginning up to (but not including) 
+      #  the last one. This effectively removes the last character.
+      #negative means it counts from end of the sequence
                expression = expression[:-1]
                equation.set(expression)
                
-        
 
 class calculator:
     def __init__(self,root):
