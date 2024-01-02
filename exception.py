@@ -33,5 +33,8 @@ def func():
     finally:
          print("error")
     
-print(func())
+# print(func())
   
+print(__name__)
+if __name__ == "__main__":
+    func()
