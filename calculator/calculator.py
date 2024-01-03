@@ -2,10 +2,12 @@ from tkinter import *
 
 expression=""
 
+
 def button_clicked(num):
        global expression
        expression= expression + str(num)
        equation.set(expression)
+
     
 def equalbtn_clicked():
         global expression
@@ -13,6 +15,7 @@ def equalbtn_clicked():
             result=eval(expression)
             equation.set(result)
             expression=""
+            
         except ZeroDivisionError as e:
              equation.set("Math error")
              expression=""
@@ -49,6 +52,14 @@ class calculator:
         self.root.maxsize(500,700)
         self.root.title("Calculator")
         self.root.config(bg="white")
+
+
+        #We can place method within the class too and by passig self we can use this 
+        #menthod inside the instances of class
+    # def button_clicked(self,num):
+    #    global expression
+    #    expression= expression + str(num)
+    #    equation.set(expression)
     
     def calculate(self):
         calculate_label=Label(text="Calculator", bg="white", foreground="black" ,font=("Times new roman",20))
