@@ -28,6 +28,7 @@ tupeles=(1,2,3,4,5,6,"hello")
 for i in tupeles:
  print(i)
  f.writelines(str(i))
+ f.truncate(6)
 
 
 #readline
@@ -45,4 +46,13 @@ while True:
     print(line)
 
 
+#seek method- jumps on the particular location or point of the current file, and is speified in a byte
+#here, it says to look from position 5
+f.seek(5)
+print(f.tell())
+fseek=f.read(3)
+print(fseek)
+
+#it tells the current position in a file
+print(f.tell())
 
