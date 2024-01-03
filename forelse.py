@@ -10,4 +10,5 @@ else:
     print("hello") 
 
 
-
+#Python takes the sign of the divisor
+print(3 % -2)
